@@ -3,9 +3,9 @@ import {
   getItemById,
   getJSONfromFile,
   writeJSONToFile,
-} from "@/lib/db/db-utils";
+} from '@/lib/db/db-utils';
 
-import type { Band } from "./types";
+import type { Band } from './types';
 
 export async function writeBands(newBandsArray: Band[]): Promise<void> {
   await writeJSONToFile(filenames.bands, newBandsArray);
@@ -16,7 +16,7 @@ export async function getBands(): Promise<Band[]> {
 }
 
 export async function getBandById(bandId: number): Promise<Band> {
-  return getItemById<Band>(bandId, filenames.bands, "band");
+  return getItemById<Band>(bandId, filenames.bands, 'band');
 }
 
 export async function addBand(newBand: Band): Promise<Band> {

@@ -1,14 +1,14 @@
-import { Button, Heading, List } from "@chakra-ui/react";
-import Link from "next/link";
-import useSWR from "swr";
+import { Button, Heading, List } from '@chakra-ui/react';
+import Link from 'next/link';
+import useSWR from 'swr';
 
-import { QueryError } from "@/components/_common/QueryError";
-import { UserReservation } from "@/components/user/UserReservation";
-import { axiosInstance } from "@/lib/axios/axiosInstance";
-import { routes } from "@/lib/axios/routes";
-import type { ReservationWithShow } from "@/lib/features/reservations/types";
+import { QueryError } from '@/components/_common/QueryError';
+import { UserReservation } from '@/components/user/UserReservation';
+import { axiosInstance } from '@/lib/axios/axiosInstance';
+import { routes } from '@/lib/axios/routes';
+import type { ReservationWithShow } from '@/lib/features/reservations/types';
 
-import { LoadingSpinner } from "../_common/LoadingSpinner";
+import { LoadingSpinner } from '../_common/LoadingSpinner';
 
 const getUserReservations = async (
   userId?: number

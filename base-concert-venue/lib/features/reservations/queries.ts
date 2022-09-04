@@ -1,13 +1,13 @@
-import { venueCapacity } from "@/lib/db/constants";
+import { venueCapacity } from '@/lib/db/constants';
 import {
   deleteItem,
   filenames,
   getItemById,
   getJSONfromFile,
   writeJSONToFile,
-} from "@/lib/db/db-utils";
+} from '@/lib/db/db-utils';
 
-import type { Reservation } from "./types";
+import type { Reservation } from './types';
 
 type availableSeatCountByShowId = Record<number, number>;
 
@@ -38,11 +38,11 @@ export async function getReservationById(
     const reservation = await getItemById<Reservation>(
       id,
       filenames.reservations,
-      "reservation"
+      'reservation'
     );
     return reservation;
   } catch (e) {
-    if (e instanceof Error && e.message === "reservation not found") {
+    if (e instanceof Error && e.message === 'reservation not found') {
       return null;
     }
     throw e;
